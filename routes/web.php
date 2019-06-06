@@ -26,3 +26,5 @@ Route::get('/LogIn',function(){
 Route::get('singleBlog',function(){
     return view('users\singleBlog');
 });
+
+Route::resource('users','Admin/UserController');
