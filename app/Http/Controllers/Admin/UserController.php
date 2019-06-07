@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\facades\Input;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Post;
@@ -80,7 +81,15 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $id = $request->get('id');
+        $post = Post::find($id);
+        $post->title = $request->get('title');
+        $post->content = $request->get('content');
+
+        $post->save();
+
+        return back();
+        
     }
 
     /**
@@ -91,7 +100,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $id = Input::get('hidden');
+        $posts = Post::find($id);
+        $posts->delete();
+        return back();
     }
 
 }

@@ -19,22 +19,53 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
-            <div class="card-header" style="background-color:rgba(201,0,251,0.03);">
-                <h4 class="text-center mb-0">Posts By :&nbsp;<span>Text</span></h4>
-            </div>
-            <div class="card-body">
-                <div class="card" style="margin-bottom:3%;">
-                    <div class="card-body" style="background-color:rgb(225,175,234);">
-                        <h4>Heading.</h4>
-                        <h6 class="text-muted card-subtitle mb-2"><span id="Author">Text</span><span id="Date" style="padding-left:4%;">Text</span></h6>
-                        <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-                        <div style="text-align:center;">
-                            <div class="btn-group btn-group-lg" role="group"><button class="btn btn-success" type="button"><i class="fa fa-edit"></i>Edit.</button><button class="btn btn-danger" type="button"><i class="fa fa-trash"></i>Delete</button></div>
+    <div style="background-color:#e6cccc;">
+        <div class="container" style="background-color:#e6cccc;">
+            <div class="card">
+                <div class="card-header" style="background-color:rgba(201,0,251,0.03);">
+                    <h4 class="text-center mb-0">Posts By :&nbsp;<span>Text</span></h4>
+                </div>
+                <div class="card-body" style="background-color:#e6cccc;">
+                    <div class="card" style="margin-bottom:3%;">
+                        <div class="card-body" style="background-color:rgb(225,175,234);">
+                            <h4>Heading.</h4>
+                            <h6 class="text-muted card-subtitle mb-2"><span id="Author">Text</span><span id="Date" style="padding-left:4%;">Text</span></h6>
+                            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                            <div style="text-align:center;">
+                                <div class="btn-group btn-group-lg" role="group"><button class="btn btn-success" type="button"><i class="fa fa-edit"></i>Edit.</button><button class="btn btn-danger" type="button"><i class="fa fa-trash"></i>Delete</button></div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="edit">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit The Post.</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group"><label><strong>Title</strong></label><input class="form-control" type="text" name="title" id="title"></div>
+                        <div class="form-group"><label><strong>Content:</strong></label><textarea class="form-control" name="content" id="content"></textarea></div><button class="btn btn-success btn-block btn-lg" type="submit">Update</button></form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="delete">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Confirmation.</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p><strong>Are You Sure You Want To Delete The Post With Title: &nbsp;</strong><span style="color:rgb(6,131,255);"><strong>Text</strong></span></p>
+                    <div style="text-align:center;">
+                        <form method="post"><button class="btn btn-success" type="button"><i class="fa fa-thumbs-up"></i><strong>Delete.</strong></button></form>
+                    </div>
+                </div>
+                <div class="modal-footer"><button class="btn btn-danger" type="button" data-dismiss="modal">Close</button></div>
             </div>
         </div>
     </div>

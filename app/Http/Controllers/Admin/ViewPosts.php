@@ -13,7 +13,7 @@ class ViewPosts extends Controller
 // return $id;
         $posts = User::find($id)->posts;
 
-        return $posts;
+        return view('admin\allposts', compact('posts'));
 
     }
 
