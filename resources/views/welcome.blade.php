@@ -18,6 +18,10 @@
                 class="col-sm-6 col-md-4 item"><a href="/singleBlog"><img class="img-fluid" src="assets/img/desk.jpg"></a>
                 <h3 class="name">Article Title</h3>
                 <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a href="/singleBlog" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <div
+                class="col-sm-6 col-md-4 item"><a href="/singleBlog"><img class="img-fluid" src="assets/img/desk.jpg"></a>
+                <h3 class="name">Article Title</h3>
+                <p class="description">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p><a href="/singleBlog" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
     </div>
     </div>
     </div>

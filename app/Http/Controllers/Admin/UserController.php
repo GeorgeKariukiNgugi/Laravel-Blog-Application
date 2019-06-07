@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-
+use App\Post;
 class UserController extends Controller
 {
     /**
@@ -27,7 +27,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin/create');
     }
 
     /**
@@ -38,7 +38,15 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $post = new Post(array(
+            'title'=> $request->get('name'),
+            'content'=> $request->get('message'),
+            'user-id'=> auth()->user()->id
+            
+        ));
+
+        $post->save();
+        return redirect('admin/users')->with('status','Added Post.');
     }
 
     /**
@@ -85,4 +93,5 @@ class UserController extends Controller
     {
         //
     }
+
 }

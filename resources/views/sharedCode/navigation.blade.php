@@ -46,7 +46,8 @@
                                 </li>
                             @endif
                         @else     
-                            <li class="nav-item" role="presentation"><a class="nav-link" href="admin/users" style="color:rgb(0,0,0);"><strong>All Users.</strong></a></li>                   
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{action('Admin\UserController@create')}}" style="color:rgb(0,0,0);"><strong>Add Post.</strong></a></li>   
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="{{action('Admin\ViewPosts@individualPosts')}}" style="color:rgb(0,0,0);"><strong>My Posts.</strong></a></li>                                   
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                         <img src="{{asset('assets/img/icon2.png')}}" style="max-height:30px;" class="rounded-circle img-fluid" > {{ Auth::user()->name }} <span class="caret"></span>

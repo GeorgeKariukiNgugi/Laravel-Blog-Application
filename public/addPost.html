@@ -18,14 +18,15 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-    <div class="login-clean" style="background-color:rgb(235,233,233);">
+<body style="background-size:auto;background-repeat:repeat;">
+    <div class="contact-clean" style="background-image:url(&quot;assets/img/beach.jpg&quot;);background-size:cover;background-repeat:no-repeat;">
         <form method="post">
-            <h2 class="text-center">TechBuzz&nbsp;</h2>
-            <div class="illustration"><img class="rounded-circle img-fluid" src="assets/img/icon2.png" style="max-height:100px;"></div>
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-            <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(210,78,232);">Log In</button></div><a href="#" class="forgot">Forgot your email or password?</a></form>
+            <div style="text-align:center;"><img class="rounded-circle img-fluid" src="assets/img/icon2.png" style="max-width:100px;"></div>
+            <h2 class="text-center">Add Post.</h2>
+            <div class="form-group"><label><strong>Post Title:</strong></label><input class="form-control" type="text" name="name" placeholder="Title"></div>
+            <div class="form-group"><label><strong>Post Content:</strong></label><textarea class="form-control" rows="14" name="message" placeholder="Content"></textarea></div>
+            <div class="form-group"><button class="btn btn-primary btn-block" type="submit" style="background-color:rgb(39,180,78);">send </button></div>
+        </form>
     </div>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

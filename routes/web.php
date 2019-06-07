@@ -30,5 +30,7 @@ Route::get('singleBlog',function(){
 // Route::resource('/users','Admin\UserController');
 
 Route::group(array( 'prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth'),function(){
-    Route::resource('/users','UserController');
+    Route::resource('users','UserController');
+    // Route::resource('/create','UserController');individualPosts
+    Route::get('getAllPosts','ViewPosts@individualPosts');
 });

@@ -10,5 +10,5 @@
     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/Article-List.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/Login-Form-Clean.css')}}">
-    
+    <link rel="stylesheet" href="{{asset('assets/css/Contact-Form-Clean.css')}}">        
 </head>
