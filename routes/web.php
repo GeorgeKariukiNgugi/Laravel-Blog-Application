@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/','LoadController@home');
 
 Auth::routes();
 
@@ -23,9 +25,7 @@ Route::get('/LogIn',function(){
       return view('auth\login');
 });
 
-Route::get('singleBlog',function(){
-    return view('users\singleBlog');
-});
+Route::get('singleBlog/{user_id}/{id}','LoadController@singleBlog');
 
 // Route::resource('/users','Admin\UserController');
 

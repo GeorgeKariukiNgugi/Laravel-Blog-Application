@@ -42,7 +42,7 @@ class UserController extends Controller
         $post = new Post(array(
             'title'=> $request->get('name'),
             'content'=> $request->get('message'),
-            'user-id'=> auth()->user()->id
+            'user_id'=> auth()->user()->id
             
         ));
 
