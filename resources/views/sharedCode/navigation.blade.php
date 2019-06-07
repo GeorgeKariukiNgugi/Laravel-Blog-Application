@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-light navbar-expand-lg navigation-clean-button" style="background-color:rgb(210,78,232);">
             <div class="container">
-                    <a class="navbar-brand" href="/"><img src="assets/img/icon2.png" style="max-height:30px;">TechBuzz Nation.</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                    <a class="navbar-brand" href="/"><img src="{{asset('assets/img/icon2.png')}}" style="max-height:30px;">TechBuzz Nation.</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
@@ -45,12 +45,13 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else
+                        @else     
+                            <li class="nav-item" role="presentation"><a class="nav-link" href="admin/users" style="color:rgb(0,0,0);"><strong>All Users.</strong></a></li>                   
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
+                                        <img src="{{asset('assets/img/icon2.png')}}" style="max-height:30px;" class="rounded-circle img-fluid" > {{ Auth::user()->name }} <span class="caret"></span>
+                                        {{-- <img class="rounded-circle img-fluid" src="icon2.png" style="max-height:100px;" /> --}}
+                                    </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
