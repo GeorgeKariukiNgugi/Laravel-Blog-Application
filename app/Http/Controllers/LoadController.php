@@ -9,12 +9,13 @@ class LoadController extends Controller
 {
     public function home(){
         $posts = Post::all();
-        return view('welcome', compact('posts'));
+        $value ="String";
+        return view('welcome', compact('posts','value'));
     }
     public function singleBlog($user_id,$id){
         $blogItem= Post::find($id);
         $user = Post::find($user_id)->user;
-        return view('users\singleBlog', compact('blogItem','$user'));
+        return view('users\singleBlog', compact('blogItem','user'));
 
         // return $user->name;
     }

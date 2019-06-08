@@ -12,10 +12,14 @@
                     
                 @else
                 @foreach ($posts as $post)
-                <div
-            class="col-sm-6 col-md-4 item"><a href="/singleBlog/{{$post->user_id}}/{{$post->id}}"><img class="img-fluid" src="assets/img/code3.png"></a>
+                @php
+                    $stringValue = str_limit($post->content, 150, "<a href=\"/singleBlog/$post->user_id/$post->id\">  more...</a>");
+                @endphp                
+            <div class="col-sm-6 col-md-4 item"><a href="/singleBlog/{{$post->user_id}}/{{$post->id}}"><img class="img-fluid" src="assets/img/code3.png"></a>
                 <h3 class="name">{{$post->title}}</h3>
-                <p class="description">{{$post->content}}</p><a href="/singleBlog/{{$post->user_id}}/{{$post->id}}" class="action"><i class="fa fa-arrow-circle-right"></i></a></div>
+                <p class="description">{!!$stringValue!!}</p>
+                <a href="/singleBlog/{{$post->user_id}}/{{$post->id}}" class="action"><i class="fa fa-arrow-circle-right"></i></a>
+            </div>
                 @endforeach                
                 @endif
     </div>

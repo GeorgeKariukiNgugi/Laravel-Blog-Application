@@ -23,9 +23,9 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
+    {       
         $users = User::all();
-        $id = 1;
+        $id = 1;        
         return view('admin\users', compact('users','id'));
     }
 }

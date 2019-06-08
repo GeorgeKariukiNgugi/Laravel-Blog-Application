@@ -17,4 +17,8 @@ class ViewPosts extends Controller
 
     }
 
+    public function personalDetails(){
+        return view('admin\personalDetails');
+    }
+
 }

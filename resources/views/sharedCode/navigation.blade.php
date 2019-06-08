@@ -59,7 +59,7 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
-
+                                    <a href="{{action('Admin\ViewPosts@personalDetails')}}" class="dropdown-item">Personal Details.</a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>

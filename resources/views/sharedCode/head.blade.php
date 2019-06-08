@@ -10,5 +10,7 @@
     <link rel="stylesheet" href="{{asset('assets/css/styles.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/Article-List.css')}}">
     <link rel="stylesheet" href="{{asset('assets/css/Login-Form-Clean.css')}}">
-    <link rel="stylesheet" href="{{asset('assets/css/Contact-Form-Clean.css')}}">        
+    <link rel="stylesheet" href="{{asset('assets/css/Contact-Form-Clean.css')}}">  
+    <link rel="stylesheet" href="{{asset('assets/css/Pretty-Registration-Form.css')}}">  
+    <link rel="stylesheet" href="{{asset('assets/css/Drag--Drop-Upload-Form.css')}}">                
 </head>

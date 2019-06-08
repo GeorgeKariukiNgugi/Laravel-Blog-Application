@@ -27,10 +27,13 @@ Route::get('/LogIn',function(){
 
 Route::get('singleBlog/{user_id}/{id}','LoadController@singleBlog');
 
+
+
 // Route::resource('/users','Admin\UserController');
 
 Route::group(array( 'prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth'),function(){
     Route::resource('users','UserController');
     // Route::resource('/create','UserController');individualPosts
     Route::get('getAllPosts','ViewPosts@individualPosts');
+    Route::get('personalDetails','ViewPosts@personalDetails');
 });
