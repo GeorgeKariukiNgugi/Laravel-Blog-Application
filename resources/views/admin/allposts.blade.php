@@ -16,7 +16,7 @@
                                 <div class="card-body" style="background-color:rgb(225,175,234);">
                                     <h4>{{$post->title}}</h4>
                                     <h6 class="text-muted card-subtitle mb-2"><span id="Author">{{auth()->user()->name}}</span><span id="Date" style="padding-left:4%;">{{$post->created_at}}</span></h6>
-                                    <p class="card-text">{{$post->content}}</p>
+                                    <p class="card-text">{!!$post->content!!}</p>
                                     <div style="text-align:center;">
                                         <div class="btn-group btn-group-lg" role="group"><button class="btn btn-success" type="button" data-toggle="modal" data-target="#edit" data-title="{{$post->title}}" data-content="{{$post->content}}" data-id="{{$post->id}}"><i class="fa fa-edit"></i>Edit.</button>
                                                                                         <button class="btn btn-danger" type="button" data-toggle="modal" data-target="#delete" data-title="{{$post->title}}" data-id="{{$post->id}}"><i class="fa fa-trash"></i>Delete</button></div>
