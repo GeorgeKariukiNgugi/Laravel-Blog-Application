@@ -77,6 +77,14 @@ return [
         // ],
     ],
 
+    // 'providers' => [
+    //     'users' => [
+    //         'driver' => 'eloquent',
+    //         'model' => Of\Your\User\Model\Use::class,
+    //         'table' => 'users',
+    //     ],
+    // ],
+
     /*
     |--------------------------------------------------------------------------
     | Resetting Passwords
