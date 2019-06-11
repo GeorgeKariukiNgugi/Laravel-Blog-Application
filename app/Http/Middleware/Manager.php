@@ -3,7 +3,8 @@
 namespace App\Http\Middleware;
 
 use Closure;
-
+// use Illuminate\Auth\Authenticatable;
+use Illuminate\Support\Facades\Auth;
 class Manager
 {
     /**
@@ -15,6 +16,16 @@ class Manager
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (!Auth::check()) {
+            return redirect('/');
+        } else {
+            $user = Auth::user();
+            if($user->hasRole('Manager')){
+                return $next($request);
+            }
+            else{
+                return redirect('admin/getAllPosts');
+            }
+        }    
     }
 }

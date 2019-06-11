@@ -40,7 +40,7 @@
                         <div class="card-header">
                             <h6 class="mb-0"><b>Comments.</b></h6>
                         </div>
-                        <div class="card-body" style="height:233px;">
+                        <div class="card-body">
                             <ul class="list-group">
                                 @if (count($comments)<1)
                                     <h4> There are no comments Aaiable Yet. Be The First To Post.</h4>

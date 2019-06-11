@@ -38,3 +38,9 @@ Route::group(array( 'prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth')
     Route::get('personalDetails','ViewPosts@personalDetails');
     Route::post('editUser','ViewPosts@updateUser');
 });
+
+// This is the route roup for the manager.
+
+Route::group(array('prefix'=> 'manager', 'namespace' => 'Manager', 'middleware' => 'manager'), function(){
+    Route::get('dashboard','Dashboard@dashboard');
+});
