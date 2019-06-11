@@ -27,7 +27,7 @@ Route::get('/LogIn',function(){
 
 Route::get('singleBlog/{user_id}/{id}','LoadController@singleBlog');
 
-
+Route::post('storeMail', 'LoadController@handleBlogComment');
 
 // Route::resource('/users','Admin\UserController');
 
