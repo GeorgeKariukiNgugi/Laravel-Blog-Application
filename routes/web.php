@@ -36,4 +36,5 @@ Route::group(array( 'prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth')
     // Route::resource('/create','UserController');individualPosts
     Route::get('getAllPosts','ViewPosts@individualPosts');
     Route::get('personalDetails','ViewPosts@personalDetails');
+    Route::post('editUser','ViewPosts@updateUser');
 });
