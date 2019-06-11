@@ -47,7 +47,12 @@ class UserController extends Controller
         ));
 
         $post->save();
-        return redirect('admin/users')->with('status','Added Post.');
+
+        $id = auth()->user()->id;           
+        $posts = User::find($id)->posts;
+       
+       return view('admin\allposts', compact('posts'));
+        // return redirect('admin/users')->with('status','Added Post.');
     }
 
     /**
