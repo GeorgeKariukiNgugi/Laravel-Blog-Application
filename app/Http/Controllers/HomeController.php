@@ -51,7 +51,7 @@ class HomeController extends Controller
          else if(auth()->user()->hasRole('Manager')){
             $users = User::all();
             $id = 1;
-            return view('admin\users', compact('users','id'));
+            return view('manager\dashboard');
          }
          else{
              return "No Role Is Assighned To You";

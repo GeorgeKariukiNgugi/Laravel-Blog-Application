@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 class Dashboard extends Controller
 {
     public function dashboard(){
-        return 'dashboard';
+        return view('manager\dashboard');
     }
         
 }
