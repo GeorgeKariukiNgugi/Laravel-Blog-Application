@@ -34,7 +34,7 @@ class ViewPosts extends Controller
         $User->email = $email;
 
         $User->save();
-        $User->attachRole($role);
+        $User->roles()->sync($role);
         
         $users = User::all();
         $id = 1;

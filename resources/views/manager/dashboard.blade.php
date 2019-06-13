@@ -4,7 +4,7 @@
  <div class="container">
         <div class="row">
             <div class="col">
-                <h2 style="margin-top:0px;font-family:'Gentium Book Basic', serif;">CEO Dashboard.</h2>
+                <h2 style="margin-top:0px;font-family:'Gentium Book Basic', serif;">Manager Dashboard.</h2>
             </div>
         </div>
         <ol class="breadcrumb" style="background-color:#f1655c;margin-top:10px;">
@@ -21,9 +21,9 @@
                         <h5 class="mb-0">Navigation&nbsp;</h5>
                     </div>
                     <div class="card-body">
-                        <div class="list-group"><a class="list-group-item list-group-item-action list-group-item-info active"><span><strong>Home</strong></span></a><a class="list-group-item list-group-item-action"><span data-toggle="modal" data-target="#ceomodal"><strong>Message CEO.</strong></span></a>
+                        <div class="list-group"><a class="list-group-item list-group-item-action list-group-item-info active"><span><strong>Home</strong></span></a><a class="list-group-item list-group-item-action"><span data-toggle="modal" data-target="#ceomodal"><strong>Message User.</strong></span></a>
                             <a
-                                class="list-group-item list-group-item-action" href="login.html"><span><strong>Edit Details.</strong></span></a><a class="list-group-item list-group-item-action" href="login.html"><span><strong>Doctor Table</strong></span></a></div>
+                                class="list-group-item list-group-item-action" href="login.html"><span><strong>Edit Details.</strong></span></a><a class="list-group-item list-group-item-action" href="login.html"><span><strong>Manage Posts and Comments.</strong></span></a></div>
                     </div>
                 </div>
             </div>
@@ -39,7 +39,7 @@
                                     <div class="card" data-bs-hover-animate="jello" style="background:linear-gradient(90deg, #11998e 0%, #38ef7d 100%);" data-toggle="modal" data-target="#modal">
                                         <div class="card-body" style="color:rgb(254,255,255);">
                                             <p style="color:rgb(249,249,249);"><i class="fa fa-search" style="font-size:50px;"></i>&nbsp; &nbsp; &nbsp; &nbsp;search for&nbsp;</p>
-                                            <p style="color:rgb(255,252,252);"><strong>Doctor</strong></p>
+                                            <p style="color:rgb(255,252,252);"><strong>User.</strong></p>
                                         </div>
                                     </div>
                                 </div>
@@ -47,7 +47,7 @@
                                     <div class="card" style="background:linear-gradient(90deg , #45b649 0%, #dce35b 100%);color:rgb(255,255,255);">
                                         <div class="card-body" style="color:rgb(255,255,255);">
                                             <p style="color:rgb(255,255,255);"><i class="fa fa-book" style="font-size:50px;"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; view&nbsp;</p>
-                                            <p style="color:rgb(255,255,255);"><strong>Appointments.</strong></p>
+                                            <p style="color:rgb(255,255,255);"><strong>Posts.</strong></p>
                                         </div>
                                     </div>
                                 </div>
@@ -68,7 +68,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header" style="background-color:rgba(181,24,109,0.59);">
-                <h5 class="mb-0">Appointments made&nbsp;</h5>
+                <h5 class="mb-0"> Posts Table&nbsp;</h5>
             </div>
             <div class="card-body" style="background-color:#b7e5eb;">
                 <div class="table-responsive">
@@ -85,39 +85,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>George Kariuki</td>
-                                <td style="padding-top:0px;padding-right:0px;padding-bottom:0px;">Prestige Loamni</td>
-                                <td>12:00 pm</td>
-                                <td>PT/00145/016</td>
-                                <td>12-01-2014</td>
-                                <td><a class="btn btn-success" role="button" href="index,html" style="background-color:#87cb16;color:#ffffff; border-radius:50%;" title="view patient." data-toggle="tooltip"><i class="fa fa-eye" style="font-size:20px;color:rgb(0,0,0);"></i></a>
-                                    <a
-                                        class="btn btn-secondary" role="button" href="index,html" style="background-color:#34e8e8;color:#ffffff;border-radius:50%;margin-right:10px;margin-left:10px;" title="delete appointment" data-toggle="tooltip"><i class="fa fa-trash-o" style="font-size:20px;color:rgb(0,0,0);"></i></a><a class="btn btn-success" role="button" href="index,html" style="background-color:#e8449d;color:#ffffff;border-radius:50%;" title="search ."
-                                            data-toggle="tooltip"><i class="fa fa-search" style="font-size:20px;color:rgb(0,0,0);"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>George Kariuki<br></td>
-                                <td>Prestige Loamni<br></td>
-                                <td>12:00 pm<br></td>
-                                <td>PT/00145/016<br></td>
-                                <td>12-01-2014<br></td>
-                                <td><button class="btn btn-success" type="button" style="background-color:#87cb16;color:#ffffff; border-radius:50%;" title="View History." data-toggle="tooltip"><i class="fa fa-eye" style="font-size:20px;color:rgb(0,0,0);"></i></button>
-                                    <a
-                                        class="btn btn-success" role="button" href="index,html" style="background-color:#34e8e8;color:#ffffff;border-radius:50%;margin-right:10px;margin-left:10px;" title="delete appointment" data-toggle="tooltip"><i class="fa fa-trash" style="font-size:20px;color:rgb(0,0,0);"></i></a><a class="btn btn-success" role="button" href="index,html" style="background-color:#e8449d;color:#ffffff;border-radius:50%;margin-right:10px;margin-left:0px;"
-                                            title="search ." data-toggle="tooltip"><i class="fa fa-search" style="font-size:20px;color:rgb(0,0,0);"></i></a></td>
-                            </tr>
-                            <tr>
-                                <td>George Kariuki<br></td>
-                                <td>Prestige Loamni<br></td>
-                                <td>12:00 pm<br></td>
-                                <td>PT/00145/016<br></td>
-                                <td>12-01-2014<br></td>
-                                <td><button class="btn btn-success" type="button" style="background-color:#87cb16;color:#ffffff; border-radius:50%;" title="View History." data-toggle="tooltip"><i class="fa fa-eye" style="font-size:20px;color:rgb(0,0,0);"></i></button>
-                                    <a
-                                        class="btn btn-success" role="button" href="index,html" style="background-color:#34e8e8;color:#ffffff;border-radius:50%;margin-right:10px;margin-left:10px;" title="delete appointment" data-toggle="tooltip"><i class="fa fa-trash" style="font-size:20px;color:rgb(0,0,0);"></i></a><a class="btn btn-success" role="button" href="index,html" style="background-color:#e8449d;color:#ffffff;border-radius:50%;margin-right:10px;margin-left:0px;"
-                                            title="search ." data-toggle="tooltip"><i class="fa fa-search" style="font-size:20px;color:rgb(0,0,0);"></i></a></td>
-                            </tr>
+                            {{-- The body of The Posts. --}}
                         </tbody>
                         <tfoot>
                             <tr>

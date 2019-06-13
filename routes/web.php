@@ -43,4 +43,5 @@ Route::group(array( 'prefix'=>'admin','namespace'=>'Admin','middleware'=>'auth')
 
 Route::group(array('prefix'=> 'manager', 'namespace' => 'Manager', 'middleware' => 'manager'), function(){
     Route::get('dashboard','Dashboard@dashboard');
+    Route::get('users','Dashboard@viewAllUsers');
 });
