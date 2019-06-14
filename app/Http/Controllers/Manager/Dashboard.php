@@ -40,4 +40,24 @@ class Dashboard extends Controller
         $id = Input::get('id');
         return $id;
     }
+
+    public function showUpload(){
+        return view('manager\upload');
+    }
+    public function upload(Request $request){
+        $file = Input::get('image');
+        if($request->hasFile('image')){
+            
+            $file = $request->file('image');
+            $name = $file->getClientOriginalName();
+            // return $name;
+            // $file->move(public_path().'/images/'.$name);
+            $file->storeAs('public/images', $name);
+
+            return "Saved";
+        }
+        // $name = $file->getClientOriginalName();
+
+        return "No Image.";
+    }
 }
