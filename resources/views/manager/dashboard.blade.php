@@ -1,4 +1,4 @@
- @extends('superClasses.mainPage')
+@extends('superClasses.mainPage')
 @section('content')
 <div style="background-color:#d3e4f8;">
  <div class="container">
@@ -46,16 +46,16 @@
                                 <div class="col">
                                     <div class="card" style="background:linear-gradient(90deg , #45b649 0%, #dce35b 100%);color:rgb(255,255,255);">
                                         <div class="card-body" style="color:rgb(255,255,255);">
-                                            <p style="color:rgb(255,255,255);"><i class="fa fa-book" style="font-size:50px;"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; view&nbsp;</p>
-                                            <p style="color:rgb(255,255,255);"><strong>Posts.</strong></p>
+                                            <p style="color:rgb(255,255,255);"><i class="fa fa-book" style="font-size:50px;"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Add&nbsp;</p>
+                                            <p style="color:rgb(255,255,255);"><strong>Role.</strong></p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col"><a href = "comments.html">
+                                <div class="col"><a href = "{{action('Manager\Dashboard@ManageCateories')}}">
                                     <div class="card" style="background:linear-gradient(90deg,#3f5efb 0%, #fc466b 100%);">
                                         <div class="card-body">
-                                            <p style="color:rgb(255,255,255);"><i class="fa fa-comments" style="font-size:50px;"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Message</p>
-                                            <p style="color:rgb(255,255,255);"><strong>Board.</strong></p>
+                                            <p style="color:rgb(255,255,255);"><i class="fa fa-comments" style="font-size:50px;"></i>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Manage</p>
+                                            <p style="color:rgb(255,255,255);"><strong>Categories.</strong></p>
                                         </div>
                                     </div></a></div>
                             </div>
