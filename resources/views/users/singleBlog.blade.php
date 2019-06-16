@@ -6,7 +6,7 @@
                 <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
                     <div class="intro">
                         <h1 class="text-center">{{$blogItem->title}}</h1>
-                        <p class="text-center"><span class="by">by</span> <a href="#">{{$user->name}}</a><span class="date" style="padding-left:2%">{{$blogItem->created_at}}</span></p><img class="img-fluid" src="{{asset('assets/img/desk.jpg')}}"></div>
+                        <p class="text-center"><span class="by">by</span> <a href="#">{{$user->name}}</a><span class="date" style="padding-left:2%">{{$blogItem->created_at->format('d M Y')}}</span></p><img class="img-fluid" src="{{asset('assets/img/desk.jpg')}}"></div>
                     <div class="text">
                        <p>{!!$blogItem->content!!}</p>                        
                             <figcaption>Caption</figcaption>

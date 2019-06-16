@@ -24,7 +24,7 @@
                                             <td>{{$id++}}</td>
                                             <td>{{$user->name}}</td>
                                             <td>{{$user->email}}</td>
-                                            <td>{{$user->created_at}}</td>
+                                            <td>{{$user->created_at->format('d M Y H:i:s')}}</td>
                                             <td><button class="btn btn-large btn-warning" data-toggle="modal" data-target="#editUser" data-id="{{$user->id}}" data-name="{{$user->name}}" data-email="{{$user->email}}"> <strong>Edit User.</strong></button></td>
                                             
                                         </tr>
