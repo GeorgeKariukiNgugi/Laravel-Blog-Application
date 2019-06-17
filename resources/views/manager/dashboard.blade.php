@@ -36,7 +36,7 @@
                         <div class="card-body" style="background-color:#b7e5eb;">
                             <div class="row">
                                 <div class="col">
-                                    <div class="card" data-bs-hover-animate="jello" style="background:linear-gradient(90deg, #11998e 0%, #38ef7d 100%);" data-toggle="modal" data-target="#modal">
+                                    <div class="card" data-bs-hover-animate="jello" style="background:linear-gradient(90deg, #11998e 0%, #38ef7d 100%);cursor:pointer;" data-toggle="modal" data-target="#search">
                                         <div class="card-body" style="color:rgb(254,255,255);">
                                             <p style="color:rgb(249,249,249);"><i class="fa fa-search" style="font-size:50px;"></i>&nbsp; &nbsp; &nbsp; &nbsp;search for&nbsp;</p>
                                             <p style="color:rgb(255,252,252);"><strong>User.</strong></p>
@@ -103,4 +103,29 @@
         </div>
     </div>
 </div>
+
+{{-- Search Modal. --}}
+<div role="dialog" tabindex="-1" class="modal fade" id = "search">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#beebeb;">
+                    <h4 class="modal-title">Enter Name To Search For User.</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form method="POST" action="{{action('Manager\Dashboard@searchUser')}}">
+                        {{ csrf_field() }}
+                        <div class="form-group">
+                            <div class="input-group">
+                                <div class="input-group-prepend"><span class="input-group-text"><i class="fa fa-user"></i></span></div><input type="text" name="username" placeholder="Username" class="form-control" />
+                                <div class="input-group-append"></div>
+                            </div>
+                        </div>
+                        <div style="text-align:center;">
+                            <div class="form-group"><button class="btn btn-success btn-lg" type="submit"><strong>Search.</strong></button></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer" style="background-color:#beebeb;"><button class="btn btn-danger" type="button" data-dismiss="modal"><strong>Close</strong></button></div>
+            </div>
+        </div>
+    </div>
 @endsection

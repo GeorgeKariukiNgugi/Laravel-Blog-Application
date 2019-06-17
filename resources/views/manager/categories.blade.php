@@ -12,6 +12,11 @@
                 @if (count($categories)<1)
                         <h3> There are No Categories Yet. Add Some By Clicking On The Button Above.<h3>                    
                 @else
+
+                @if (session('status'))
+                    <div role="alert" class="alert alert-danger" style="background-color:rgb(213,127,135);">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button><span><strong>{{session('status')}}</strong></span></div>
+                @endif
                 <div class="table-responsive">
                         <table class="table table-striped table-bordered table-hover table-dark table-sm">
                             <caption>ALL Categories Table.</caption>
@@ -31,13 +36,13 @@
                                     <tr>
                                     <td>{{$id}}</td>
                                     <td>{{ $categories->Name}}</td>
-                                    <td>{{ $categories->Description}}</td>
+                                    <td>{!! $categories->Description!!}</td>
                                     <td>{{ $categories->id}}</td>
-                                    <td>{{ $categories->created_at}}</td>
+                                    <td>{{ $categories->created_at->format('d/M/Y')}}</td>
                                     <td>
-                                    <button class="btn btn-success" style="background-color:#87cb16;color:#ffffff; border-radius:50%;" data-name="{{$categories->Name}}" data-description="{{ $categories->Description}}" data-date="{{ $categories->created_at}}" data-target="#viewCategory" data-toggle="modal"><i class="fa fa-eye" style="font-size:20px;color:rgb(0,0,0);"></i></button>
+                                    <button class="btn btn-success" style="background-color:#87cb16;color:#ffffff; border-radius:50%;" data-name="{{$categories->Name}}" data-description="{{ $categories->Description}}" data-date="{{ $categories->created_at->format('d/M/Y')}}" data-target="#viewCategory" data-toggle="modal"><i class="fa fa-eye" style="font-size:20px;color:rgb(0,0,0);"></i></button>
                                         <a class="btn btn-secondary" role="button" href="index,html" style="background-color:#34e8e8;color:#ffffff;border-radius:50%;margin-right:10px;margin-left:10px;" data-target="#deleteCategory" data-toggle="modal" data-name="{{$categories->Name}}" data-id="{{$categories->id}}" ><i class="fa fa-trash-o" style="font-size:20px;color:rgb(0,0,0);"></i></a>
-                                        <a class="btn btn-success" role="button" href="index,html" style="background-color:#e8449d;color:#ffffff;border-radius:50%;" title="search ." data-toggle="tooltip"><i class="fa fa-edit" style="font-size:20px;color:rgb(0,0,0);"></i></a>
+                                        <a class="btn btn-success" role="button" href="index,html" style="background-color:#e8449d;color:#ffffff;border-radius:50%;" title="search ." data-toggle="modal" data-target="#editCategory"  data-name="{{$categories->Name}}" data-description="{{ $categories->Description}}" data-id="{{$categories->id}}"><i class="fa fa-edit" style="font-size:20px;color:rgb(0,0,0);"></i></a>
                                 </td>
                                 @php
                                     $id+1;
@@ -68,7 +73,7 @@
 
 {{-- The modal to be shown upon clicking the add category button. --}}
 <div role="dialog" tabindex="-1" class="modal fade" id="addCategory">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color:#b7e5eb;">
                     <h4 class="text-center modal-title">Create New Category.</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
@@ -76,9 +81,11 @@
                     <form method="POST" action="{{action('Manager\Dashboard@addCategory')}}">
                         {{ csrf_field() }}
                         <div class="form-group"><label><strong>Name:</strong></label><input type="text" name = "name" class="form-control" /></div>
-                        <div class="form-group"><label><strong>Description:</strong></label><input type="text" name = "description" class="form-control" /></div>
+                        <div class="form-group"><label><strong>Description:</strong></label>
+                            <textarea name = "description" class="form-control" id="article-ckeditor" placeholder="Description."></textarea>
+                        </div>
                         <div class="form-group">
-                            <div style="text-align:center;"><button class="btn btn-success" type="submit" style="color:rgb(255,255,255);background-color:rgb(59,170,7);">Save</button></div>
+                            <div style="text-align:center;"><button class="btn btn-success btn-lg" type="submit" style="color:rgb(255,255,255);background-color:rgb(59,170,7);"><strong> Save</strong></button></div>
                         </div>
                     </form>
                 </div>
@@ -115,11 +122,12 @@
                         <div class="modal-header" style="background-color:#b3efef;">
                             <h4 class="modal-title">Confirmation.</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                         <div class="modal-body">
-                            <p><strong>Are You Sure You Want To Delete The Category With Title:</strong><span style="color:rgb(6,131,255);"><strong>Text</strong></span></p>
+                            <p><strong>Are You Sure You Want To Delete The Category With Title:</strong><span style="color:rgb(6,131,255);" id = "name"><strong >Text</strong></span></p>
                             <div style="text-align:center;">
-                                <form method="POST">
-                                    <button class="btn btn-success" type="button"><i class="fa fa-thumbs-up"></i><strong>Delete.</strong></button>
-                                <input type="hidden" name="id" value="">
+                            <form method="POST" action= "{{action('Manager\Dashboard@deleteCategory')}}">
+                                    {{ csrf_field() }}
+                                    <button class="btn btn-success" type="submit"><i class="fa fa-thumbs-up"></i><strong>Delete.</strong></button>
+                                <input type="hidden" id = "id" name="id" value="">
                                 </form>
                             </div>
                         </div>
@@ -127,4 +135,29 @@
                     </div>
                 </div>
             </div>
+
+            {{-- The modal to be thrown when the edit button is clicked. --}}
+            <div role="dialog" tabindex="-1" class="modal fade" id="editCategory">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header" style="background-color:#b7e5eb;">
+                                <h4 class="text-center modal-title">Create New Category.</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                            <div class="modal-body" style="background-color:#b7e5eb;">
+                                <form method="POST" action="{{action('Manager\Dashboard@editCategory')}}">
+                                    {{ csrf_field() }}
+                                    <input type="hidden" name="id" id = "id">
+                                    <div class="form-group"><label><strong>Name:</strong></label><input type="text" name = "name" id = "name"class="form-control" /></div>
+                                    <div class="form-group"><label><strong>Description:</strong></label>
+                                        <textarea name = "description" id = "description" class="form-control" placeholder="Description."></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <div style="text-align:center;"><button class="btn btn-success btn-lg" type="submit" style="color:rgb(255,255,255);background-color:rgb(59,170,7);"><strong> Save</strong></button></div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal-footer" style="background-color:#b7e5eb;"><button class="btn btn-danger" type="button" data-dismiss="modal" style="color:rgb(255,255,255);background-color:rgb(213,3,16);">Close</button></div>
+                        </div>
+                    </div>
+                </div>
+            
 @endsection

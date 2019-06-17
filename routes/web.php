@@ -47,6 +47,8 @@ Route::group(array('prefix'=> 'manager', 'namespace' => 'Manager', 'middleware' 
     Route::get('manageCategories','Dashboard@ManageCateories');
     Route::get('/showUpload', 'Dashboard@showUpload');
     Route::post('addCategory','Dashboard@addCategory');
-    Route::post('deleteCategory',' Dashboard@deleteCategory');
+    Route::post('deleteCategory','Dashboard@deleteCategory');
+    Route::post('editCategory','Dashboard@editCategory');
     Route::post('uploadImage', 'Dashboard@upload' );
+    Route::post('searchUser', 'Dashboard@searchUser' );
 });

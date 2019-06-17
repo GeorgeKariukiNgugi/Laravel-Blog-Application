@@ -38,9 +38,21 @@ class Dashboard extends Controller
 
     public function deleteCategory(){
         $id = Input::get('id');
-        return $id;
+        $category = Category::find($id);
+        $category->delete();
+        return back()->with('status', 'The Category Has Been Deleted.');
     }
 
+    public function editCategory(){
+        $id = Input::get('id');
+        $name = Input::get('name');
+        $description = Input::get('description');
+        $category = Category::find($id);
+        $category->Name = $name ;
+        $category->Description = $description;
+        $category->save();
+        return back()->with('status', 'The Category Has Been Edited.');
+    }
     public function showUpload(){
         return view('manager\upload');
     }
@@ -59,5 +71,10 @@ class Dashboard extends Controller
         // $name = $file->getClientOriginalName();
 
         return "No Image.";
+    }
+
+    public function searchUser(){
+        $userName = Input::get('username');
+        return $userName;
     }
 }
