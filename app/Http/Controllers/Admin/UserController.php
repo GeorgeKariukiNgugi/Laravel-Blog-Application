@@ -5,8 +5,10 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Support\facades\Input;
 use App\Http\Controllers\Controller;
+use RealRashid\SweetAlert\Facades\Alert;
 use App\User;
 use App\Post;
+// use Alert;
 class UserController extends Controller
 {
     /**
@@ -18,6 +20,7 @@ class UserController extends Controller
     {
         $users = User::all();
         $id = 1;
+        // Alert::message('Robots are working!');
         return view('admin\users', compact('users','id'));
     }
 
@@ -50,7 +53,7 @@ class UserController extends Controller
 
         $id = auth()->user()->id;           
         $posts = User::find($id)->posts;
-       
+        Alert::error('Error Title', 'Error Message');
        return view('admin\allposts', compact('posts'));
         // return redirect('admin/users')->with('status','Added Post.');
     }
@@ -109,6 +112,7 @@ class UserController extends Controller
         $posts = Post::find($id);
         $posts->delete();
         return back();
+        // return $id;
     }
 
 }

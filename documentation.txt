@@ -42,3 +42,7 @@ The Command To Store The Image is: $file->storeAs('public/images', $name); == Th
        stored in the storage folder that will be shadowed in the public directory.
 
 
+F). How To Install Sweet Alert.
+run the command::  composer require uxweb/sweet-alert
+
+

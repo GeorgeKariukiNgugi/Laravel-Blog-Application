@@ -12,6 +12,7 @@
     @include('sharedCode.javascript')
     @include('sharedCode.ckEditor')
     @include('ckfinder::setup')
+    @include('sweetalert::alert')
 </body>
 
 </html>    
