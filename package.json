@@ -25,5 +25,25 @@
   },
   "dependencies": {
     "sweetalert": "^2.1.2"
-  }
+  },
+  "name": "laddabuttons",
+  "description": "This is a blog application that I use to study the inner workings of Laravel.",
+  "version": "1.0.0",
+  "main": "webpack.mix.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorgeKariuki7205/Laravel-Blog-Application.git"
+  },
+  "keywords": [
+    "new"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeorgeKariuki7205/Laravel-Blog-Application/issues"
+  },
+  "homepage": "https://github.com/GeorgeKariuki7205/Laravel-Blog-Application#readme"
 }

@@ -111,6 +111,7 @@ class UserController extends Controller
         $id = Input::get('hidden');
         $posts = Post::find($id);
         $posts->delete();
+        Alert::warning('Message !!', 'The Post Has Been Deleted.');
         return back();
         // return $id;
     }
