@@ -53,7 +53,7 @@ class UserController extends Controller
 
         $id = auth()->user()->id;           
         $posts = User::find($id)->posts;
-        Alert::error('Error Title', 'Error Message');
+        Alert::success('Success Title', 'Added the success title');
        return view('admin\allposts', compact('posts'));
         // return redirect('admin/users')->with('status','Added Post.');
     }

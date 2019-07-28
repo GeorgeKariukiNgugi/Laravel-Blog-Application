@@ -35,7 +35,7 @@ In the migration file, The following should be added
 E). How To Store An Image Into The Folder. 
 
 Run The Command, php artisan storage:link ==== This comand id used to mimic the public  folder in storage\app.
-The command to get the name of the file and the  or file is $name = $file->getClientOriginalName();
+The command to get the name of the file and the  or image is $name = $file->getClientOriginalName();
 The command to get the file name alone is $filename = phpinfo($theFileNameAsAWhole, PHPINFO_FILENAME);
 The command to get the file extension is $fileExtension = $file->getOriginalClientExtension();
 The Command To Store The Image is: $file->storeAs('public/images', $name); == This command will store the file in the image folder in public folder that is 
